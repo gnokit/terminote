@@ -1,20 +1,35 @@
-# Astro Blog
+# Terminote
 
-A minimalistic blog built with Astro featuring content collections, RSS feeds, and responsive design.
+A terminal-themed blog template for developers, built with Astro.
+
+![Terminote Preview](https://gnokit.github.io/terminote/preview.png)
 
 ## Features
 
-- ⚡ **Fast by default** - Astro's zero-JS architecture
+- 🖥️ **Terminal UI** - Authentic macOS terminal aesthetic with traffic lights
+- 🎨 **4 Beautiful Themes** - Pro, Homebrew, Nocturnal, and Retro
+- ✨ **Animated Effects** - Blinking cursor, subtle scanlines, smooth transitions
+- 🔍 **SEO-friendly** - Canonical URLs, OpenGraph, sitemap, RSS feeds
+- 📱 **Responsive** - Optimized for 2K displays with 150% scaling
+- ⚡ **Fast** - Astro's zero-JS architecture, 100/100 Lighthouse score
 - 📝 **Content Collections** - Type-safe Markdown & MDX support
-- 🎨 **Minimal styling** - Clean, customizable design
-- 📱 **Responsive** - Mobile-first approach
-- 🔍 **SEO-friendly** - Canonical URLs, OpenGraph, sitemap
-- 📡 **RSS Feed** - Auto-generated at `/rss.xml`
-- ✅ **100/100 Lighthouse** - Performance optimized
+
+## Terminal Themes
+
+Switch between 4 unique terminal color schemes:
+
+- **Pro** - Default macOS Terminal dark (blue/gray)
+- **Homebrew** - Matrix green style (neon green/cyan)
+- **Nocturnal** - Cyberpunk purple/blue (purple/cyan)
+- **Retro** - Vintage amber terminal (amber/orange)
 
 ## Quick Start
 
 ```bash
+# Clone the repository
+git clone https://github.com/gnokit/terminote.git
+cd terminote
+
 # Install dependencies
 npm install
 
@@ -34,7 +49,7 @@ npm run build
 │   ├── content/blog/    # Blog posts (Markdown/MDX)
 │   ├── layouts/         # Page layouts
 │   ├── pages/           # File-based routes
-│   ├── styles/          # Global CSS
+│   ├── styles/          # Global CSS + Terminal themes
 │   ├── assets/          # Images processed by Astro
 │   └── consts.ts        # Site constants
 ├── astro.config.mjs     # Astro configuration
@@ -52,9 +67,21 @@ npm run build
 | `npx astro check`     | Type-check the project                       |
 | `npx astro sync`      | Generate content collection types            |
 
-## Adding Content
+## Customization
 
-Create new blog posts in `src/content/blog/`:
+### Site Configuration
+
+Edit `src/consts.ts`:
+
+```typescript
+export const SITE_TITLE = 'Your Blog Name';
+export const SITE_DESCRIPTION = 'Your blog description';
+export const AUTHOR_NAME = 'Your Name';
+```
+
+### Adding Blog Posts
+
+Create new posts in `src/content/blog/`:
 
 ```markdown
 ---
@@ -67,18 +94,43 @@ heroImage: '../../assets/blog-placeholder-1.jpg'
 Your content here...
 ```
 
-## Contributing
+### Creating Custom Themes
 
-See [AGENTS.md](./AGENTS.md) for development guidelines and code style conventions for AI agents and contributors.
+Add new theme files in `src/styles/themes/` following the existing pattern:
+
+```css
+[data-theme="mytheme"] {
+  --terminal-bg: #1e1e1e;
+  --terminal-text: #f0f0f0;
+  /* ... more variables */
+}
+```
 
 ## Deployment
 
-Update `site` URL in `astro.config.mjs`, then deploy to:
+### GitHub Pages
+
+1. Update `site` in `astro.config.mjs`:
+   ```javascript
+   site: 'https://yourusername.github.io/terminote',
+   ```
+
+2. Enable GitHub Pages in repository settings
+3. Push to `main` branch
+
+### Other Platforms
 
 - **Vercel** - `vercel --prod`
 - **Netlify** - Connect Git repo
 - **Cloudflare Pages** - Import from Git
-- **Static hosting** - Upload `./dist/` folder
+
+## Contributing
+
+See [AGENTS.md](./AGENTS.md) for development guidelines and code style conventions.
+
+## Author
+
+Created by [Paul Chan](https://github.com/gnokit)
 
 ## Tech Stack
 
@@ -90,3 +142,7 @@ Update `site` URL in `astro.config.mjs`, then deploy to:
 ## License
 
 MIT
+
+---
+
+**[Live Demo](https://gnokit.github.io/terminote)** | **[GitHub Repo](https://github.com/gnokit/terminote)**

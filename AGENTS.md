@@ -1,6 +1,6 @@
-# AGENTS.md - Astro Blog Development Guide
+# AGENTS.md - Terminote Development Guide
 
-This guide is for AI agents working on this Astro blog codebase.
+This guide is for AI agents working on the Terminote terminal-themed blog codebase.
 
 ## Available Commands
 
@@ -17,6 +17,41 @@ npx astro sync       # Generate content collection types
 ```
 
 **Note:** No testing or linting tools are currently configured.
+
+## Terminal Theme System
+
+Terminote features 4 built-in terminal color schemes:
+
+- **Pro** (default) - macOS Terminal dark theme
+- **Homebrew** - Matrix green terminal style
+- **Nocturnal** - Cyberpunk purple/blue theme
+- **Retro** - Vintage amber monitor aesthetic
+
+### Theme CSS Variables
+
+Each theme defines these CSS custom properties:
+
+```css
+[data-theme="pro"] {
+    --terminal-bg: #1e1e1e;
+    --terminal-bg-secondary: #2d2d2d;
+    --terminal-text: #f0f0f0;
+    --terminal-text-muted: #6c6c6c;
+    --terminal-accent: #0a84ff;
+    --terminal-success: #32d74b;
+    --terminal-warning: #ff9f0a;
+    --terminal-error: #ff453a;
+    --terminal-cyan: #64d2ff;
+    --terminal-magenta: #ff375f;
+}
+```
+
+### Creating New Themes
+
+1. Create `src/styles/themes/your-theme.css`
+2. Define `[data-theme="your-theme"]` selector with variables
+3. Import in `src/styles/global.css`
+4. Add theme button in `ThemeToggle.astro`
 
 ## Code Style Guidelines
 
@@ -56,9 +91,10 @@ const { title, href = '#' } = Astro.props;
 
 - **Components**: PascalCase (`Header.astro`, `FormattedDate.astro`)
 - **Utilities/Config**: camelCase (`consts.ts`, `content.config.ts`)
-- **Blog Content**: kebab-case (`first-post.md`, `markdown-style-guide.md`)
+- **Blog Content**: kebab-case (`welcome-to-terminote.md`, `terminal-themes-guide.md`)
 - **Dynamic Routes**: Bracket notation (`[...slug].astro`)
 - **Layouts**: Descriptive (`BlogPost.astro`)
+- **Themes**: lowercase (`pro.css`, `homebrew.css`)
 
 ### TypeScript Guidelines
 
@@ -83,28 +119,44 @@ import Header from '../components/Header.astro';
 import '../styles/global.css';
 
 // Global constants
-import { SITE_TITLE } from '../consts';
+import { SITE_TITLE, AUTHOR_NAME } from '../consts';
+
+// Terminal components
+import TerminalWindow from '../components/TerminalWindow.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
 ```
 
 ### Styling Conventions
 
-**CSS Variables** (defined in `src/styles/global.css`):
+**Terminal CSS Variables** (defined in theme files):
 ```css
 :root {
-    --accent: #2337ff;
-    --black: 15, 18, 25;
-    --gray: 96, 115, 159;
+    --terminal-bg: #1e1e1e;
+    --terminal-text: #f0f0f0;
+    --terminal-accent: #0a84ff;
+    --traffic-close: #ff5f56;
+    --traffic-minimize: #ffbd2e;
+    --traffic-maximize: #27c93f;
 }
 ```
 
 **Component-scoped styles** preferred over global styles. Use CSS custom properties for theming.
 
-**Responsive breakpoints**:
+**Responsive breakpoints** (scaled 150% for 2K):
 ```css
+@media (max-width: 1080px) {
+    /* Tablet styles */
+}
+
 @media (max-width: 720px) {
     /* Mobile styles */
 }
 ```
+
+**Design at 150% scale** - All measurements are scaled for 2K resolution visibility:
+- Base font-size: 24px (was 16px)
+- Container width: 1350px (was 900px)
+- Traffic lights: 18px (was 12px)
 
 ### Content Collections
 
@@ -150,13 +202,15 @@ if (!post) return Astro.redirect('/404');
 - Include `aria-label` or `aria-hidden` on icons
 - Use the `.sr-only` class for screen-reader-only text
 - Ensure color contrast meets WCAG standards
+- Support `prefers-reduced-motion` for animations
 
 ### Constants
 
 Store global data in `src/consts.ts`:
 ```typescript
-export const SITE_TITLE = 'Astro Blog';
-export const SITE_DESCRIPTION = 'Welcome to my website!';
+export const SITE_TITLE = 'Terminote';
+export const SITE_DESCRIPTION = 'A terminal-themed blog template powered by Astro';
+export const AUTHOR_NAME = 'Paul Chan';
 ```
 
 Update the `site` URL in `astro.config.mjs` before deploying.
@@ -166,10 +220,17 @@ Update the `site` URL in `astro.config.mjs` before deploying.
 ```
 src/
 ├── components/       # Reusable UI components (.astro)
+│   ├── ThemeToggle.astro      # Theme switcher
+│   ├── TerminalWindow.astro   # macOS window wrapper
+│   ├── BlinkingCursor.astro   # Animated cursor
+│   └── Header.astro           # Terminal header
 ├── content/blog/     # Blog posts (.md, .mdx)
 ├── layouts/          # Page layouts (.astro)
 ├── pages/            # File-based routes (.astro)
-├── styles/           # Global CSS
+├── styles/           # Global CSS + Themes
+│   ├── themes/       # Theme files (pro, homebrew, etc.)
+│   ├── terminal.css  # Terminal base styles
+│   └── animations.css # Cursor blink, scanlines
 ├── assets/           # Images (processed by Astro)
 └── consts.ts         # Global constants
 public/               # Static files (fonts, favicon)
@@ -182,3 +243,6 @@ public/               # Static files (fonts, favicon)
 3. **Image optimization** - Use `<Image />` component from `astro:assets`
 4. **SEO** - Use `BaseHead.astro` component for meta tags
 5. **RSS** - Update `src/pages/rss.xml.js` when adding content types
+6. **Theme consistency** - Use CSS variables for colors, don't hardcode
+7. **150% scale** - Maintain large sizes for 2K visibility
+8. **Terminal aesthetic** - Keep macOS terminal styling consistent

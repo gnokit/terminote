@@ -1,7 +1,8 @@
 {
-  "name": "mini-blog-opencode",
+  "name": "terminote",
   "type": "module",
   "version": "0.0.1",
+  "description": "A terminal-themed blog template built with Astro",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

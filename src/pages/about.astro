@@ -1,63 +1,239 @@
 ---
 import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
 import Layout from '../layouts/BlogPost.astro';
+import TerminalWindow from '../components/TerminalWindow.astro';
 ---
 
 <Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
+	title="About Terminote"
+	description="A terminal-themed blog template for developers built with Astro"
+	pubDate={new Date('February 13 2025')}
 	heroImage={AboutHeroImage}
 >
+	<h2>What is Terminote?</h2>
 	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+		Terminote is a <strong>terminal-themed blog template</strong> designed for developers who want a unique,
+		distraction-free writing experience. Inspired by the aesthetic of macOS Terminal, it combines the
+		familiarity of command-line interfaces with the power of modern web technologies.
+	</p>
+	<p>
+		Whether you're documenting your coding journey, sharing technical tutorials, or building a personal
+		brand, Terminote provides a beautiful, fast, and fully customizable foundation that stands out from
+		traditional blog designs.
 	</p>
 
+	<h2>Features</h2>
+	
+	<h3>🎨 4 Beautiful Terminal Themes</h3>
 	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
+		Switch between four carefully crafted color schemes that capture different terminal aesthetics:
+	</p>
+	<ul>
+		<li><strong>Pro</strong> - Default macOS Terminal dark theme with blue accents</li>
+		<li><strong>Homebrew</strong> - Matrix-inspired green terminal with neon glow</li>
+		<li><strong>Nocturnal</strong> - Cyberpunk purple and cyan for night owls</li>
+		<li><strong>Retro</strong> - Vintage amber monitor aesthetic</li>
+	</ul>
+
+	<TerminalWindow title="terminote-themes" showStatusBar={true} statusText="zsh">
+		<div class="terminal-content">
+			<div class="command-line">
+				<span class="prompt">➜</span>
+				<span class="command">terminote theme set pro</span>
+			</div>
+			<div class="output">
+				Theme switched to: Pro (Default macOS Terminal)
+			</div>
+			
+			<div class="command-line">
+				<span class="prompt">➜</span>
+				<span class="command">terminote theme set homebrew</span>
+			</div>
+			<div class="output">
+				Theme switched to: Homebrew (Matrix Green)
+			</div>
+			
+			<div class="command-line">
+				<span class="prompt">➜</span>
+				<span class="command">_</span>
+			</div>
+		</div>
+	</TerminalWindow>
+
+	<h3>✨ Authentic Terminal UI</h3>
+	<p>
+		Experience blogging with authentic terminal aesthetics including:
+	</p>
+	<ul>
+		<li>macOS-style traffic light buttons (close, minimize, maximize)</li>
+		<li>Blinking cursor animation</li>
+		<li>Subtle scanline overlay effect</li>
+		<li>Command prompt styling (user@terminote:~$)</li>
+		<li>Terminal window frames with shadows</li>
+	</ul>
+
+	<h3>⚡ Lightning Fast Performance</h3>
+	<p>
+		Built with <a href="https://astro.build/" target="_blank">Astro</a>, Terminote ships with zero JavaScript
+		by default, resulting in exceptional performance metrics:
+	</p>
+	<ul>
+		<li>100/100 Lighthouse Performance score</li>
+		<li>Instant page loads with static generation</li>
+		<li>Optimized images with Sharp</li>
+		<li>Minimal CSS with theme variables</li>
+	</ul>
+
+	<h3>📱 Optimized for 2K Displays</h3>
+	<p>
+		Every element is scaled to 150% for perfect visibility on high-resolution displays:
+	</p>
+	<ul>
+		<li>Base font size: 24px (up from 16px)</li>
+		<li>Container width: 1350px (up from 900px)</li>
+		<li>Traffic lights: 18px (up from 12px)</li>
+		<li>Touch-friendly buttons and links</li>
+	</ul>
+
+	<h2>For Developers</h2>
+	
+	<h3>🛠️ Tech Stack</h3>
+	<p>Terminote is built with modern, developer-friendly technologies:</p>
+	<ul>
+		<li><strong>Astro 5.x</strong> - All-in-one web framework</li>
+		<li><strong>TypeScript</strong> - Type-safe code</li>
+		<li><strong>Zod</strong> - Schema validation for content</li>
+		<li><strong>MDX</strong> - Markdown with JSX components</li>
+		<li><strong>Sharp</strong> - Image optimization</li>
+	</ul>
+
+	<h3>📝 Content Collections</h3>
+	<p>
+		Terminote uses Astro's Content Collections with Zod schemas for type-safe blog posts. Simply add
+		Markdown or MDX files to <code>src/content/blog/</code>:
 	</p>
 
+	<TerminalWindow title="content/blog/my-post.md" showStatusBar={true} statusText="markdown">
+		<div class="terminal-content">
+			<div class="code-block">
+---
+title: 'My Awesome Post'
+description: 'A detailed description'
+pubDate: 2025-02-13
+heroImage: '../../assets/blog-placeholder-1.jpg'
+---
+
+# My Awesome Post
+
+Write your content here using **Markdown** syntax.
+			</div>
+		</div>
+	</TerminalWindow>
+
+	<h3>🎨 Customizing Themes</h3>
 	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+		Creating custom themes is straightforward. Add a new CSS file in <code>src/styles/themes/</code>:
 	</p>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+	<TerminalWindow title="styles/themes/custom.css" showStatusBar={true} statusText="css">
+		<div class="terminal-content">
+			<pre class="code-block">[data-theme="custom"] {'{'}
+  --terminal-bg: #0a0a0f;
+  --terminal-text: #00ff88;
+  --terminal-accent: #00ff88;
+  --terminal-success: #00ff88;
+  --terminal-cyan: #00ffff;
+  --terminal-magenta: #ff00ff;
+{'}'}</pre>
+		</div>
+	</TerminalWindow>
 
+	<h3>🔍 SEO & Meta</h3>
+	<p>Terminote includes built-in SEO features:</p>
+	<ul>
+		<li>Auto-generated RSS feed at <code>/rss.xml</code></li>
+		<li>Sitemap generation</li>
+		<li>OpenGraph and Twitter Card meta tags</li>
+		<li>Canonical URLs</li>
+		<li>Structured data support</li>
+	</ul>
+
+	<h2>Getting Started</h2>
+	<p>Ready to start your terminal blog? Here's how to get up and running in minutes:</p>
+
+	<TerminalWindow title="terminal" showStatusBar={true} statusText="bash">
+		<div class="terminal-content">
+			<div class="command-line">
+				<span class="prompt">$</span>
+				<span class="command">git clone https://github.com/gnokit/terminote.git</span>
+			</div>
+			<div class="command-line">
+				<span class="prompt">$</span>
+				<span class="command">cd terminote</span>
+			</div>
+			<div class="command-line">
+				<span class="prompt">$</span>
+				<span class="command">npm install</span>
+			</div>
+			<div class="command-line">
+				<span class="prompt">$</span>
+				<span class="command">npm run dev</span>
+			</div>
+			<div class="output success">
+				ready in 350ms
+				
+				  🚀 Local: http://localhost:4321/
+				  ⭐ Terminote is running!
+			</div>
+		</div>
+	</TerminalWindow>
+
+	<h2>Author</h2>
 	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+		Terminote was created by <strong>Paul Chan</strong> (<a href="https://github.com/gnokit" target="_blank">@gnokit</a>).
+		It's open source and available on <a href="https://github.com/gnokit/terminote" target="_blank">GitHub</a>.
+	</p>
+	<p>
+		Feel free to fork, customize, and make it your own. If you build something cool with Terminote,
+		I'd love to hear about it!
 	</p>
 </Layout>
+
+<style>
+	.terminal-content {
+		font-family: "SF Mono", "Menlo", "Monaco", "Courier New", monospace;
+		line-height: 1.8;
+	}
+
+	.command-line {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		margin: 4px 0;
+	}
+
+	.command-line .prompt {
+		color: var(--terminal-accent);
+		font-weight: 600;
+	}
+
+	.command-line .command {
+		color: var(--terminal-text);
+	}
+
+	.output {
+		color: var(--terminal-text-muted);
+		margin: 4px 0 12px 24px;
+		white-space: pre-line;
+	}
+
+	.output.success {
+		color: var(--terminal-success);
+	}
+
+	.code-block {
+		color: var(--terminal-cyan);
+		white-space: pre;
+		overflow-x: auto;
+	}
+</style>

@@ -2,6 +2,8 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import TerminalWindow from '../components/TerminalWindow.astro';
+import BlinkingCursor from '../components/BlinkingCursor.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 ---
 
@@ -13,37 +15,417 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			<!-- Welcome Section -->
+			<section class="welcome-section">
+				<div class="terminal-prompt">
+					<span class="user">user</span>
+					<span class="at">@</span>
+					<span class="host">terminote</span>
+					<span class="separator">:</span>
+					<span class="path">~</span>
+					<span class="symbol">$</span>
+					<span class="command">welcome</span>
+					<BlinkingCursor />
+				</div>
+				
+				<h1 class="fade-in">Welcome to Terminote</h1>
+				<p class="subtitle fade-in">
+					A terminal-themed blog template for developers. Beautiful, fast, and fully customizable.
+				</p>
+				
+				<div class="cta-buttons fade-in">
+					<a href="/blog" class="cta-primary">View Blog</a>
+					<a href="/about" class="cta-secondary">Learn More</a>
+				</div>
+			</section>
+
+			<!-- Terminal Demo Section -->
+			<section class="demo-section">
+				<h2>Terminal Experience</h2>
+				<p>Experience blogging in a whole new way with authentic terminal aesthetics.</p>
+				
+				<TerminalWindow title="terminote -- zsh" showStatusBar={true} statusText="zsh">
+					<div class="terminal-demo-content">
+						<div class="command-line">
+							<span class="prompt">➜</span>
+							<span class="command-text">terminote --version</span>
+						</div>
+						<div class="output">
+							Terminote v0.0.1 - Terminal Blog Template
+						</div>
+						
+						<div class="command-line">
+							<span class="prompt">➜</span>
+							<span class="command-text">terminote themes list</span>
+						</div>
+						<div class="output">
+							Available themes:
+							<span class="theme-tag pro">Pro</span> - Default macOS Terminal
+							<span class="theme-tag homebrew">Homebrew</span> - Matrix green
+							<span class="theme-tag nocturnal">Nocturnal</span> - Cyberpunk purple
+							<span class="theme-tag retro">Retro</span> - Vintage amber
+						</div>
+						
+						<div class="command-line">
+							<span class="prompt">➜</span>
+							<span class="command-text">terminote features</span>
+						</div>
+						<div class="output">
+							✓ 4 Beautiful terminal themes
+							✓ macOS traffic light buttons
+							✓ Animated cursor & scanlines
+							✓ Type-safe content collections
+							✓ RSS feeds & sitemap
+							✓ 150% scale optimized for 2K
+						</div>
+						
+						<div class="command-line">
+							<span class="prompt">➜</span>
+							<span class="command-text">_</span>
+							<BlinkingCursor />
+						</div>
+					</div>
+				</TerminalWindow>
+			</section>
+
+			<!-- Features Grid -->
+			<section class="features-section">
+				<h2>Features</h2>
+				<div class="features-grid">
+					<div class="feature-card">
+						<div class="feature-icon">🎨</div>
+						<h3>4 Terminal Themes</h3>
+						<p>Switch between Pro, Homebrew, Nocturnal, and Retro themes with a click.</p>
+					</div>
+					<div class="feature-card">
+						<div class="feature-icon">⚡</div>
+						<h3>Lightning Fast</h3>
+						<p>Built with Astro's zero-JS architecture for optimal performance.</p>
+					</div>
+					<div class="feature-card">
+						<div class="feature-icon">📝</div>
+						<h3>Content Collections</h3>
+						<p>Type-safe Markdown & MDX with Zod schema validation.</p>
+					</div>
+					<div class="feature-card">
+						<div class="feature-icon">🔍</div>
+						<h3>SEO Ready</h3>
+						<p>Auto-generated RSS, sitemap, and OpenGraph meta tags.</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Quick Start -->
+			<section class="quickstart-section">
+				<h2>Quick Start</h2>
+				<TerminalWindow title="terminal" showStatusBar={true} statusText="bash">
+					<div class="terminal-demo-content">
+						<div class="command-line">
+							<span class="prompt">$</span>
+							<span class="command-text">git clone https://github.com/gnokit/terminote.git</span>
+						</div>
+						<div class="command-line">
+							<span class="prompt">$</span>
+							<span class="command-text">cd terminote</span>
+						</div>
+						<div class="command-line">
+							<span class="prompt">$</span>
+							<span class="command-text">npm install</span>
+						</div>
+						<div class="command-line">
+							<span class="prompt">$</span>
+							<span class="command-text">npm run dev</span>
+						</div>
+						<div class="output success">
+							ready in 350ms
+
+							  🚀 Local: http://localhost:4321/
+							  ⭐ Terminote is running!
+						</div>
+					</div>
+				</TerminalWindow>
+				
+				<div class="cta-center">
+					<a href="https://github.com/gnokit/terminote" class="cta-primary" target="_blank">
+						View on GitHub →
+					</a>
+				</div>
+			</section>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	/* Welcome Section */
+	.welcome-section {
+		padding: 3rem 0;
+		text-align: center;
+	}
+
+	.terminal-prompt {
+		font-family: "SF Mono", "Menlo", "Monaco", "Courier New", monospace;
+		font-size: 21px;
+		margin-bottom: 1.5rem;
+		opacity: 0.8;
+	}
+
+	.terminal-prompt .user {
+		color: var(--terminal-magenta);
+		font-weight: 600;
+	}
+
+	.terminal-prompt .at {
+		color: var(--terminal-text-muted);
+	}
+
+	.terminal-prompt .host {
+		color: var(--terminal-cyan);
+		font-weight: 600;
+	}
+
+	.terminal-prompt .separator,
+	.terminal-prompt .path {
+		color: var(--terminal-text-muted);
+	}
+
+	.terminal-prompt .symbol {
+		color: var(--terminal-text);
+		margin: 0 4px;
+	}
+
+	.terminal-prompt .command {
+		color: var(--terminal-success);
+	}
+
+	h1 {
+		font-size: 3em;
+		margin-bottom: 1rem;
+		background: linear-gradient(135deg, var(--terminal-accent) 0%, var(--terminal-cyan) 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	.subtitle {
+		font-size: 1.25em;
+		color: var(--terminal-text-muted);
+		max-width: 800px;
+		margin: 0 auto 2rem;
+	}
+
+	.cta-buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		margin-top: 2rem;
+	}
+
+	.cta-primary,
+	.cta-secondary {
+		padding: 12px 24px;
+		border-radius: 8px;
+		text-decoration: none;
+		font-weight: 600;
+		transition: all 0.2s ease;
+		font-size: 18px;
+	}
+
+	.cta-primary {
+		background: var(--terminal-accent);
+		color: var(--terminal-bg);
+	}
+
+	.cta-primary:hover {
+		background: var(--terminal-cyan);
+		border-bottom-color: transparent;
+	}
+
+	.cta-secondary {
+		background: var(--terminal-bg-secondary);
+		color: var(--terminal-text);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	.cta-secondary:hover {
+		background: rgba(255, 255, 255, 0.1);
+		border-bottom-color: transparent;
+	}
+
+	/* Demo Section */
+	.demo-section {
+		padding: 2rem 0;
+	}
+
+	.demo-section h2 {
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+
+	.demo-section > p {
+		text-align: center;
+		color: var(--terminal-text-muted);
+		margin-bottom: 2rem;
+	}
+
+	/* Terminal Demo Content */
+	.terminal-demo-content {
+		font-family: "SF Mono", "Menlo", "Monaco", "Courier New", monospace;
+		line-height: 1.8;
+	}
+
+	.command-line {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		margin: 8px 0;
+	}
+
+	.command-line .prompt {
+		color: var(--terminal-accent);
+		font-weight: 600;
+	}
+
+	.command-line .command-text {
+		color: var(--terminal-text);
+	}
+
+	.output {
+		color: var(--terminal-text-muted);
+		margin: 8px 0 16px 24px;
+		white-space: pre-line;
+	}
+
+	.output.success {
+		color: var(--terminal-success);
+	}
+
+	.theme-tag {
+		display: inline-block;
+		padding: 2px 8px;
+		border-radius: 4px;
+		margin: 4px 8px 4px 0;
+		font-size: 0.85em;
+	}
+
+	.theme-tag.pro {
+		background: rgba(10, 132, 255, 0.2);
+		color: #0a84ff;
+	}
+
+	.theme-tag.homebrew {
+		background: rgba(0, 255, 65, 0.2);
+		color: #00ff41;
+	}
+
+	.theme-tag.nocturnal {
+		background: rgba(191, 90, 242, 0.2);
+		color: #bf5af2;
+	}
+
+	.theme-tag.retro {
+		background: rgba(255, 176, 0, 0.2);
+		color: #ffb000;
+	}
+
+	/* Features Section */
+	.features-section {
+		padding: 3rem 0;
+	}
+
+	.features-section h2 {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	.features-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 1.5rem;
+	}
+
+	.feature-card {
+		background: var(--terminal-bg-secondary);
+		padding: 1.5rem;
+		border-radius: 12px;
+		border: 1px solid rgba(255, 255, 255, 0.05);
+		transition: transform 0.2s ease, border-color 0.2s ease;
+	}
+
+	.feature-card:hover {
+		transform: translateY(-4px);
+		border-color: var(--terminal-accent);
+	}
+
+	.feature-icon {
+		font-size: 2em;
+		margin-bottom: 0.5rem;
+	}
+
+	.feature-card h3 {
+		margin-bottom: 0.5rem;
+		color: var(--terminal-accent);
+	}
+
+	.feature-card p {
+		color: var(--terminal-text-muted);
+		margin: 0;
+	}
+
+	/* Quickstart Section */
+	.quickstart-section {
+		padding: 3rem 0;
+	}
+
+	.quickstart-section h2 {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	.cta-center {
+		text-align: center;
+		margin-top: 2rem;
+	}
+
+	/* Animations */
+	.fade-in {
+		animation: fadeIn 0.6s ease-out forwards;
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	/* Responsive */
+	@media (max-width: 720px) {
+		h1 {
+			font-size: 2em;
+		}
+
+		.subtitle {
+			font-size: 1em;
+		}
+
+		.cta-buttons {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.cta-primary,
+		.cta-secondary {
+			width: 100%;
+			max-width: 300px;
+		}
+
+		.features-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

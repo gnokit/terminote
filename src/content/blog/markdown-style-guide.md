@@ -1,11 +1,11 @@
 ---
 title: 'Markdown Style Guide'
-description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
-pubDate: 'Jun 19 2024'
+description: 'A comprehensive guide to Markdown syntax supported in Terminote, including examples and best practices.'
+pubDate: 'Feb 13 2025'
 heroImage: '../../assets/blog-placeholder-1.jpg'
 ---
 
-Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
+This guide demonstrates the Markdown syntax supported in **Terminote**. Whether you're writing technical documentation, blog posts, or personal notes, these formatting options will help you create beautiful content.
 
 ## Headings
 
