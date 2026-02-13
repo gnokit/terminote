@@ -3,37 +3,37 @@
   Based on macOS Terminal aesthetics with multiple color schemes
 */
 
-/* Import Terminal Themes */
-@import './themes/pro.css';
-@import './themes/homebrew.css';
-@import './themes/nocturnal.css';
-@import './themes/retro.css';
+/* Import Terminal Themes - Ghostty Popular Themes */
+@import './themes/catppuccin-mocha.css';
+@import './themes/dracula.css';
+@import './themes/catppuccin-latte.css';
+@import './themes/solarized-light.css';
 
 /* Import Terminal Base Styles & Animations */
 @import './terminal.css';
 @import './animations.css';
 
-/* Default Theme Variables (Pro - macOS Terminal Dark) */
+/* Default Theme Variables (Catppuccin Mocha - Soft pastel dark) */
 :root {
-	--accent: #0a84ff;
-	--accent-dark: #0051d5;
-	--black: 30, 30, 30;
-	--gray: 108, 108, 108;
-	--gray-light: 45, 45, 45;
-	--gray-dark: 240, 240, 240;
+	--accent: #CBA6F7;
+	--accent-dark: #A67BCC;
+	--black: 30, 30, 46;
+	--gray: 108, 112, 134;
+	--gray-light: 49, 50, 68;
+	--gray-dark: 205, 214, 244;
 	
-	/* Terminal Colors - Default */
-	--terminal-bg: #1e1e1e;
-	--terminal-bg-secondary: #2d2d2d;
-	--terminal-text: #f0f0f0;
-	--terminal-text-muted: #6c6c6c;
-	--terminal-accent: #0a84ff;
-	--terminal-accent-secondary: #5e5ce6;
-	--terminal-success: #32d74b;
-	--terminal-warning: #ff9f0a;
-	--terminal-error: #ff453a;
-	--terminal-cyan: #64d2ff;
-	--terminal-magenta: #ff375f;
+	/* Terminal Colors - Default (Catppuccin Mocha) */
+	--terminal-bg: #1E1E2E;
+	--terminal-bg-secondary: #313244;
+	--terminal-text: #CDD6F4;
+	--terminal-text-muted: #6C7086;
+	--terminal-accent: #CBA6F7;
+	--terminal-accent-secondary: #BAC2DE;
+	--terminal-success: #A6E3A1;
+	--terminal-warning: #F9E2AF;
+	--terminal-error: #F38BA8;
+	--terminal-cyan: #89DCEB;
+	--terminal-magenta: #F5C2E7;
 	
 	/* Traffic Lights */
 	--traffic-close: #ff5f56;

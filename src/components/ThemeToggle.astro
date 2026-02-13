@@ -1,43 +1,44 @@
 ---
 // Theme Toggle Component - macOS Terminal Style Theme Switcher
+// Features Ghostty popular terminal themes
 ---
 
 <div class="theme-toggle">
 	<button 
 		class="theme-button active" 
-		data-theme="pro"
-		aria-label="Switch to Pro theme"
-		title="Pro (Default)"
+		data-theme="catppuccin-mocha"
+		aria-label="Switch to Catppuccin Mocha theme"
+		title="Catppuccin Mocha (Dark)"
 	>
-		<span class="theme-indicator pro"></span>
-		<span class="theme-label">Pro</span>
+		<span class="theme-indicator catppuccin-mocha"></span>
+		<span class="theme-label">Mocha</span>
 	</button>
 	<button 
 		class="theme-button" 
-		data-theme="homebrew"
-		aria-label="Switch to Homebrew theme"
-		title="Homebrew (Green)"
+		data-theme="dracula"
+		aria-label="Switch to Dracula theme"
+		title="Dracula (Dark)"
 	>
-		<span class="theme-indicator homebrew"></span>
-		<span class="theme-label">Homebrew</span>
+		<span class="theme-indicator dracula"></span>
+		<span class="theme-label">Dracula</span>
 	</button>
 	<button 
 		class="theme-button" 
-		data-theme="nocturnal"
-		aria-label="Switch to Nocturnal theme"
-		title="Nocturnal (Purple)"
+		data-theme="catppuccin-latte"
+		aria-label="Switch to Catppuccin Latte theme"
+		title="Catppuccin Latte (Light)"
 	>
-		<span class="theme-indicator nocturnal"></span>
-		<span class="theme-label">Nocturnal</span>
+		<span class="theme-indicator catppuccin-latte"></span>
+		<span class="theme-label">Latte</span>
 	</button>
 	<button 
 		class="theme-button" 
-		data-theme="retro"
-		aria-label="Switch to Retro theme"
-		title="Retro (Amber)"
+		data-theme="solarized-light"
+		aria-label="Switch to Solarized Light theme"
+		title="Solarized Light (Light)"
 	>
-		<span class="theme-indicator retro"></span>
-		<span class="theme-label">Retro</span>
+		<span class="theme-indicator solarized-light"></span>
+		<span class="theme-label">Solarized</span>
 	</button>
 </div>
 
@@ -85,20 +86,21 @@
 		flex-shrink: 0;
 	}
 
-	.theme-indicator.pro {
-		background: #0a84ff;
+	/* Ghostty Theme Colors */
+	.theme-indicator.catppuccin-mocha {
+		background: #CBA6F7;
 	}
 
-	.theme-indicator.homebrew {
-		background: #00ff41;
+	.theme-indicator.dracula {
+		background: #BD93F9;
 	}
 
-	.theme-indicator.nocturnal {
-		background: #bf5af2;
+	.theme-indicator.catppuccin-latte {
+		background: #8839EF;
 	}
 
-	.theme-indicator.retro {
-		background: #ffb000;
+	.theme-indicator.solarized-light {
+		background: #268BD2;
 	}
 
 	.theme-label {
@@ -133,8 +135,8 @@
 	const themeButtons = document.querySelectorAll('.theme-button');
 	const html = document.documentElement;
 
-	// Get saved theme or default to 'pro'
-	const savedTheme = localStorage.getItem('theme') || 'pro';
+	// Get saved theme or default to 'catppuccin-mocha'
+	const savedTheme = localStorage.getItem('theme') || 'catppuccin-mocha';
 	html.setAttribute('data-theme', savedTheme);
 
 	// Update active button

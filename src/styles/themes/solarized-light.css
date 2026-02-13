@@ -1,0 +1,93 @@
+/* Solarized Light Theme - Precision warm light */
+[data-theme="solarized-light"] {
+	/* Terminal Colors */
+	--terminal-bg: #FDF6E3;
+	--terminal-bg-secondary: #EEE8D5;
+	--terminal-text: #657B83;
+	--terminal-text-muted: #93A1A1;
+	--terminal-accent: #268BD2;
+	--terminal-accent-secondary: #586E75;
+	--terminal-success: #859900;
+	--terminal-warning: #B58900;
+	--terminal-error: #DC322F;
+	--terminal-cyan: #2AA198;
+	--terminal-magenta: #D33682;
+	
+	/* Traffic Lights - Standard macOS */
+	--traffic-close: #ff5f56;
+	--traffic-minimize: #ffbd2e;
+	--traffic-maximize: #27c93f;
+	
+	/* Shadows */
+	--terminal-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+	--terminal-shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+	
+	/* Blog Specific Overrides */
+	--accent: var(--terminal-accent);
+	--accent-dark: #1E6EA8;
+	--black: 101, 123, 131;
+	--gray: 147, 161, 161;
+	--gray-light: 238, 232, 213;
+	--gray-dark: 101, 123, 131;
+}
+
+[data-theme="solarized-light"] body {
+	background: var(--terminal-bg);
+	color: var(--terminal-text);
+	font-family: "SF Mono", "Menlo", "Monaco", "Courier New", monospace;
+}
+
+[data-theme="solarized-light"] h1,
+[data-theme="solarized-light"] h2,
+[data-theme="solarized-light"] h3,
+[data-theme="solarized-light"] h4,
+[data-theme="solarized-light"] h5,
+[data-theme="solarized-light"] h6 {
+	color: var(--terminal-text);
+}
+
+[data-theme="solarized-light"] a {
+	color: var(--terminal-accent);
+}
+
+[data-theme="solarized-light"] a:hover {
+	color: var(--terminal-cyan);
+}
+
+[data-theme="solarized-light"] code {
+	background-color: var(--terminal-bg-secondary);
+	color: var(--terminal-cyan);
+	border-radius: 4px;
+	padding: 2px 6px;
+}
+
+[data-theme="solarized-light"] pre {
+	background-color: var(--terminal-bg-secondary);
+	border-radius: 6px;
+}
+
+[data-theme="solarized-light"] blockquote {
+	border-left-color: var(--terminal-accent);
+	color: var(--terminal-text-muted);
+}
+
+[data-theme="solarized-light"] .terminal-prompt {
+	color: var(--terminal-success);
+}
+
+[data-theme="solarized-light"] .terminal-prompt::before {
+	content: "➜ ";
+	color: var(--terminal-accent);
+}
+
+[data-theme="solarized-light"] .terminal-user {
+	color: var(--terminal-magenta);
+}
+
+[data-theme="solarized-light"] .terminal-host {
+	color: var(--terminal-cyan);
+}
+
+[data-theme="solarized-light"] .terminal-path {
+	color: var(--terminal-warning);
+}

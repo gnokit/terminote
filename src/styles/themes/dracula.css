@@ -1,0 +1,93 @@
+/* Dracula Theme - Bold vivid dark */
+[data-theme="dracula"] {
+	/* Terminal Colors */
+	--terminal-bg: #282A36;
+	--terminal-bg-secondary: #44475A;
+	--terminal-text: #F8F8F2;
+	--terminal-text-muted: #6272A4;
+	--terminal-accent: #BD93F9;
+	--terminal-accent-secondary: #6272A4;
+	--terminal-success: #50FA7B;
+	--terminal-warning: #FFB86C;
+	--terminal-error: #FF5555;
+	--terminal-cyan: #8BE9FD;
+	--terminal-magenta: #FF79C6;
+	
+	/* Traffic Lights - Standard macOS */
+	--traffic-close: #ff5f56;
+	--traffic-minimize: #ffbd2e;
+	--traffic-maximize: #27c93f;
+	
+	/* Shadows */
+	--terminal-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+	--terminal-shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+	
+	/* Blog Specific Overrides */
+	--accent: var(--terminal-accent);
+	--accent-dark: #9A6CCF;
+	--black: 40, 42, 54;
+	--gray: 98, 114, 164;
+	--gray-light: 68, 71, 90;
+	--gray-dark: 248, 248, 242;
+}
+
+[data-theme="dracula"] body {
+	background: var(--terminal-bg);
+	color: var(--terminal-text);
+	font-family: "SF Mono", "Menlo", "Monaco", "Courier New", monospace;
+}
+
+[data-theme="dracula"] h1,
+[data-theme="dracula"] h2,
+[data-theme="dracula"] h3,
+[data-theme="dracula"] h4,
+[data-theme="dracula"] h5,
+[data-theme="dracula"] h6 {
+	color: var(--terminal-text);
+}
+
+[data-theme="dracula"] a {
+	color: var(--terminal-accent);
+}
+
+[data-theme="dracula"] a:hover {
+	color: var(--terminal-cyan);
+}
+
+[data-theme="dracula"] code {
+	background-color: var(--terminal-bg-secondary);
+	color: var(--terminal-cyan);
+	border-radius: 4px;
+	padding: 2px 6px;
+}
+
+[data-theme="dracula"] pre {
+	background-color: var(--terminal-bg-secondary);
+	border-radius: 6px;
+}
+
+[data-theme="dracula"] blockquote {
+	border-left-color: var(--terminal-accent);
+	color: var(--terminal-text-muted);
+}
+
+[data-theme="dracula"] .terminal-prompt {
+	color: var(--terminal-success);
+}
+
+[data-theme="dracula"] .terminal-prompt::before {
+	content: "➜ ";
+	color: var(--terminal-accent);
+}
+
+[data-theme="dracula"] .terminal-user {
+	color: var(--terminal-magenta);
+}
+
+[data-theme="dracula"] .terminal-host {
+	color: var(--terminal-cyan);
+}
+
+[data-theme="dracula"] .terminal-path {
+	color: var(--terminal-warning);
+}

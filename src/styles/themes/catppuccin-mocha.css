@@ -1,0 +1,93 @@
+/* Catppuccin Mocha Theme - Soft pastel dark (Default) */
+[data-theme="catppuccin-mocha"] {
+	/* Terminal Colors */
+	--terminal-bg: #1E1E2E;
+	--terminal-bg-secondary: #313244;
+	--terminal-text: #CDD6F4;
+	--terminal-text-muted: #6C7086;
+	--terminal-accent: #CBA6F7;
+	--terminal-accent-secondary: #BAC2DE;
+	--terminal-success: #A6E3A1;
+	--terminal-warning: #F9E2AF;
+	--terminal-error: #F38BA8;
+	--terminal-cyan: #89DCEB;
+	--terminal-magenta: #F5C2E7;
+	
+	/* Traffic Lights - Standard macOS */
+	--traffic-close: #ff5f56;
+	--traffic-minimize: #ffbd2e;
+	--traffic-maximize: #27c93f;
+	
+	/* Shadows */
+	--terminal-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+	--terminal-shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+	
+	/* Blog Specific Overrides */
+	--accent: var(--terminal-accent);
+	--accent-dark: #A67BCC;
+	--black: 30, 30, 46;
+	--gray: 108, 112, 134;
+	--gray-light: 49, 50, 68;
+	--gray-dark: 205, 214, 244;
+}
+
+[data-theme="catppuccin-mocha"] body {
+	background: var(--terminal-bg);
+	color: var(--terminal-text);
+	font-family: "SF Mono", "Menlo", "Monaco", "Courier New", monospace;
+}
+
+[data-theme="catppuccin-mocha"] h1,
+[data-theme="catppuccin-mocha"] h2,
+[data-theme="catppuccin-mocha"] h3,
+[data-theme="catppuccin-mocha"] h4,
+[data-theme="catppuccin-mocha"] h5,
+[data-theme="catppuccin-mocha"] h6 {
+	color: var(--terminal-text);
+}
+
+[data-theme="catppuccin-mocha"] a {
+	color: var(--terminal-accent);
+}
+
+[data-theme="catppuccin-mocha"] a:hover {
+	color: var(--terminal-cyan);
+}
+
+[data-theme="catppuccin-mocha"] code {
+	background-color: var(--terminal-bg-secondary);
+	color: var(--terminal-cyan);
+	border-radius: 4px;
+	padding: 2px 6px;
+}
+
+[data-theme="catppuccin-mocha"] pre {
+	background-color: var(--terminal-bg-secondary);
+	border-radius: 6px;
+}
+
+[data-theme="catppuccin-mocha"] blockquote {
+	border-left-color: var(--terminal-accent);
+	color: var(--terminal-text-muted);
+}
+
+[data-theme="catppuccin-mocha"] .terminal-prompt {
+	color: var(--terminal-success);
+}
+
+[data-theme="catppuccin-mocha"] .terminal-prompt::before {
+	content: "➜ ";
+	color: var(--terminal-accent);
+}
+
+[data-theme="catppuccin-mocha"] .terminal-user {
+	color: var(--terminal-magenta);
+}
+
+[data-theme="catppuccin-mocha"] .terminal-host {
+	color: var(--terminal-cyan);
+}
+
+[data-theme="catppuccin-mocha"] .terminal-path {
+	color: var(--terminal-warning);
+}

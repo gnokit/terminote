@@ -20,24 +20,24 @@ npx astro sync       # Generate content collection types
 
 ## Terminal Theme System
 
-Terminote features 4 built-in terminal color schemes:
+Terminote features 4 popular Ghostty terminal color schemes:
 
-- **Pro** (default) - macOS Terminal dark theme
-- **Homebrew** - Matrix green terminal style
-- **Nocturnal** - Cyberpunk purple/blue theme
-- **Retro** - Vintage amber monitor aesthetic
+- **Catppuccin Mocha** (default) - Soft pastel dark theme
+- **Dracula** - Bold vivid dark theme
+- **Catppuccin Latte** - Warm muted light theme
+- **Solarized Light** - Precision warm light theme
 
 ### Theme CSS Variables
 
 Each theme defines these CSS custom properties:
 
 ```css
-[data-theme="pro"] {
-    --terminal-bg: #1e1e1e;
-    --terminal-bg-secondary: #2d2d2d;
-    --terminal-text: #f0f0f0;
-    --terminal-text-muted: #6c6c6c;
-    --terminal-accent: #0a84ff;
+[data-theme="catppuccin-mocha"] {
+    --terminal-bg: #1E1E2E;
+    --terminal-bg-secondary: #313244;
+    --terminal-text: #CDD6F4;
+    --terminal-text-muted: #6C7086;
+    --terminal-accent: #CBA6F7;
     --terminal-success: #32d74b;
     --terminal-warning: #ff9f0a;
     --terminal-error: #ff453a;
