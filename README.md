@@ -145,6 +145,13 @@ Created by [Paul Chan](https://github.com/gnokit)
 
 MIT
 
+## Development Log
+
+**2025-02-13**
+- Tokens used: 170,658 (65% of context)
+- Cost: $1.74
+- Activities: Theme system implementation, Ghostty theme migration, content updates
+
 ---
 
 **[Live Demo](https://gnokit.github.io/terminote)** | **[GitHub Repo](https://github.com/gnokit/terminote)**
