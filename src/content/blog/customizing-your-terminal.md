@@ -23,11 +23,11 @@ Terminote uses a layered approach to styling:
 The simplest way to customize is modifying an existing theme file:
 
 ```css
-/* src/styles/themes/pro.css */
-[data-theme="pro"] {
-  --terminal-bg: #1e1e1e;
-  --terminal-text: #f0f0f0;
-  --terminal-accent: #0a84ff; /* Change this to your preferred accent */
+/* src/styles/themes/catppuccin-mocha.css */
+[data-theme="catppuccin-mocha"] {
+  --terminal-bg: #1E1E2E;
+  --terminal-text: #CDD6F4;
+  --terminal-accent: #CBA6F7; /* Change this to your preferred accent */
   /* ... more variables */
 }
 ```

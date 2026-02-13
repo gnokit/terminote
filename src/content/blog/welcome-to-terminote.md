@@ -13,7 +13,7 @@ Terminote is a blog template designed for developers who appreciate the aestheti
 
 ## Features at a Glance
 
-- 🎨 **4 Terminal Themes** - Pro, Homebrew, Nocturnal, and Retro
+- 🎨 **4 Terminal Themes** - Catppuccin Mocha, Dracula, Catppuccin Latte, and Solarized Light
 - ⚡ **Lightning Fast** - Built with Astro's zero-JS architecture
 - 📝 **Content Collections** - Type-safe Markdown & MDX
 - 📱 **2K Optimized** - Scaled to 150% for high-resolution displays
@@ -68,10 +68,10 @@ Your content here...
 
 Click the theme buttons in the header to switch between:
 
-- **Pro** - Default macOS Terminal dark
-- **Homebrew** - Matrix green style
-- **Nocturnal** - Cyberpunk purple/blue
-- **Retro** - Vintage amber
+- **Catppuccin Mocha** - Soft pastel dark theme
+- **Dracula** - Bold vivid dark theme
+- **Catppuccin Latte** - Warm muted light theme
+- **Solarized Light** - Precision warm light theme
 
 Your theme preference is saved in localStorage and persists across sessions.
 

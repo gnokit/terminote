@@ -7,7 +7,7 @@ A terminal-themed blog template for developers, built with Astro.
 ## Features
 
 - 🖥️ **Terminal UI** - Authentic macOS terminal aesthetic with traffic lights
-- 🎨 **4 Beautiful Themes** - Pro, Homebrew, Nocturnal, and Retro
+- 🎨 **4 Ghostty Themes** - Catppuccin Mocha, Dracula, Catppuccin Latte, and Solarized Light
 - ✨ **Animated Effects** - Blinking cursor, subtle scanlines, smooth transitions
 - 🔍 **SEO-friendly** - Canonical URLs, OpenGraph, sitemap, RSS feeds
 - 📱 **Responsive** - Optimized for 2K displays with 150% scaling
@@ -16,12 +16,14 @@ A terminal-themed blog template for developers, built with Astro.
 
 ## Terminal Themes
 
-Switch between 4 unique terminal color schemes:
+Switch between 4 popular Ghostty terminal color schemes:
 
-- **Pro** - Default macOS Terminal dark (blue/gray)
-- **Homebrew** - Matrix green style (neon green/cyan)
-- **Nocturnal** - Cyberpunk purple/blue (purple/cyan)
-- **Retro** - Vintage amber terminal (amber/orange)
+| Theme | Type | Background | Primary Text | Accent | Description |
+|-------|------|------------|--------------|--------|-------------|
+| **Catppuccin Mocha** | Dark | `#1E1E2E` | `#CDD6F4` | `#CBA6F7` | Soothing pastel dark theme by Catppuccin |
+| **Dracula** | Dark | `#282A36` | `#F8F8F2` | `#BD93F9` | Classic vivid dark theme by Zeno Rocha |
+| **Catppuccin Latte** | Light | `#EFF1F5` | `#4C4F69` | `#8839EF` | Warm muted light theme by Catppuccin |
+| **Solarized Light** | Light | `#FDF6E3` | `#657B83` | `#268BD2` | Precision-engineered theme by Ethan Schoonover |
 
 ## Quick Start
 
