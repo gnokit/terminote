@@ -1,5 +1,5 @@
 /* Catppuccin Latte Theme - Warm muted light */
-[data-theme="catppuccin-latte"] {
+html[data-theme="catppuccin-latte"] {
 	/* Terminal Colors */
 	--terminal-bg: #EFF1F5;
 	--terminal-bg-secondary: #CCD0DA;
@@ -31,63 +31,63 @@
 	--gray-dark: 76, 79, 105;
 }
 
-[data-theme="catppuccin-latte"] body {
+html[data-theme="catppuccin-latte"] body {
 	background: var(--terminal-bg);
 	color: var(--terminal-text);
 	font-family: "SF Mono", "Menlo", "Monaco", "Courier New", monospace;
 }
 
-[data-theme="catppuccin-latte"] h1,
-[data-theme="catppuccin-latte"] h2,
-[data-theme="catppuccin-latte"] h3,
-[data-theme="catppuccin-latte"] h4,
-[data-theme="catppuccin-latte"] h5,
-[data-theme="catppuccin-latte"] h6 {
+html[data-theme="catppuccin-latte"] h1,
+html[data-theme="catppuccin-latte"] h2,
+html[data-theme="catppuccin-latte"] h3,
+html[data-theme="catppuccin-latte"] h4,
+html[data-theme="catppuccin-latte"] h5,
+html[data-theme="catppuccin-latte"] h6 {
 	color: var(--terminal-text);
 }
 
-[data-theme="catppuccin-latte"] a {
+html[data-theme="catppuccin-latte"] a {
 	color: var(--terminal-accent);
 }
 
-[data-theme="catppuccin-latte"] a:hover {
+html[data-theme="catppuccin-latte"] a:hover {
 	color: var(--terminal-cyan);
 }
 
-[data-theme="catppuccin-latte"] code {
+html[data-theme="catppuccin-latte"] code {
 	background-color: var(--terminal-bg-secondary);
 	color: var(--terminal-cyan);
 	border-radius: 4px;
 	padding: 2px 6px;
 }
 
-[data-theme="catppuccin-latte"] pre {
+html[data-theme="catppuccin-latte"] pre {
 	background-color: var(--terminal-bg-secondary);
 	border-radius: 6px;
 }
 
-[data-theme="catppuccin-latte"] blockquote {
+html[data-theme="catppuccin-latte"] blockquote {
 	border-left-color: var(--terminal-accent);
 	color: var(--terminal-text-muted);
 }
 
-[data-theme="catppuccin-latte"] .terminal-prompt {
+html[data-theme="catppuccin-latte"] .terminal-prompt {
 	color: var(--terminal-success);
 }
 
-[data-theme="catppuccin-latte"] .terminal-prompt::before {
+html[data-theme="catppuccin-latte"] .terminal-prompt::before {
 	content: "➜ ";
 	color: var(--terminal-accent);
 }
 
-[data-theme="catppuccin-latte"] .terminal-user {
+html[data-theme="catppuccin-latte"] .terminal-user {
 	color: var(--terminal-magenta);
 }
 
-[data-theme="catppuccin-latte"] .terminal-host {
+html[data-theme="catppuccin-latte"] .terminal-host {
 	color: var(--terminal-cyan);
 }
 
-[data-theme="catppuccin-latte"] .terminal-path {
+html[data-theme="catppuccin-latte"] .terminal-path {
 	color: var(--terminal-warning);
 }

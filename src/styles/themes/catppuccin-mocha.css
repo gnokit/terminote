@@ -1,5 +1,5 @@
 /* Catppuccin Mocha Theme - Soft pastel dark (Default) */
-[data-theme="catppuccin-mocha"] {
+html[data-theme="catppuccin-mocha"] {
 	/* Terminal Colors */
 	--terminal-bg: #1E1E2E;
 	--terminal-bg-secondary: #313244;
@@ -31,63 +31,63 @@
 	--gray-dark: 205, 214, 244;
 }
 
-[data-theme="catppuccin-mocha"] body {
+html[data-theme="catppuccin-mocha"] body {
 	background: var(--terminal-bg);
 	color: var(--terminal-text);
 	font-family: "SF Mono", "Menlo", "Monaco", "Courier New", monospace;
 }
 
-[data-theme="catppuccin-mocha"] h1,
-[data-theme="catppuccin-mocha"] h2,
-[data-theme="catppuccin-mocha"] h3,
-[data-theme="catppuccin-mocha"] h4,
-[data-theme="catppuccin-mocha"] h5,
-[data-theme="catppuccin-mocha"] h6 {
+html[data-theme="catppuccin-mocha"] h1,
+html[data-theme="catppuccin-mocha"] h2,
+html[data-theme="catppuccin-mocha"] h3,
+html[data-theme="catppuccin-mocha"] h4,
+html[data-theme="catppuccin-mocha"] h5,
+html[data-theme="catppuccin-mocha"] h6 {
 	color: var(--terminal-text);
 }
 
-[data-theme="catppuccin-mocha"] a {
+html[data-theme="catppuccin-mocha"] a {
 	color: var(--terminal-accent);
 }
 
-[data-theme="catppuccin-mocha"] a:hover {
+html[data-theme="catppuccin-mocha"] a:hover {
 	color: var(--terminal-cyan);
 }
 
-[data-theme="catppuccin-mocha"] code {
+html[data-theme="catppuccin-mocha"] code {
 	background-color: var(--terminal-bg-secondary);
 	color: var(--terminal-cyan);
 	border-radius: 4px;
 	padding: 2px 6px;
 }
 
-[data-theme="catppuccin-mocha"] pre {
+html[data-theme="catppuccin-mocha"] pre {
 	background-color: var(--terminal-bg-secondary);
 	border-radius: 6px;
 }
 
-[data-theme="catppuccin-mocha"] blockquote {
+html[data-theme="catppuccin-mocha"] blockquote {
 	border-left-color: var(--terminal-accent);
 	color: var(--terminal-text-muted);
 }
 
-[data-theme="catppuccin-mocha"] .terminal-prompt {
+html[data-theme="catppuccin-mocha"] .terminal-prompt {
 	color: var(--terminal-success);
 }
 
-[data-theme="catppuccin-mocha"] .terminal-prompt::before {
+html[data-theme="catppuccin-mocha"] .terminal-prompt::before {
 	content: "➜ ";
 	color: var(--terminal-accent);
 }
 
-[data-theme="catppuccin-mocha"] .terminal-user {
+html[data-theme="catppuccin-mocha"] .terminal-user {
 	color: var(--terminal-magenta);
 }
 
-[data-theme="catppuccin-mocha"] .terminal-host {
+html[data-theme="catppuccin-mocha"] .terminal-host {
 	color: var(--terminal-cyan);
 }
 
-[data-theme="catppuccin-mocha"] .terminal-path {
+html[data-theme="catppuccin-mocha"] .terminal-path {
 	color: var(--terminal-warning);
 }

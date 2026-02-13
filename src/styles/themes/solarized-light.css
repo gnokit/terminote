@@ -1,5 +1,5 @@
 /* Solarized Light Theme - Precision warm light */
-[data-theme="solarized-light"] {
+html[data-theme="solarized-light"] {
 	/* Terminal Colors */
 	--terminal-bg: #FDF6E3;
 	--terminal-bg-secondary: #EEE8D5;
@@ -31,63 +31,63 @@
 	--gray-dark: 101, 123, 131;
 }
 
-[data-theme="solarized-light"] body {
+html[data-theme="solarized-light"] body {
 	background: var(--terminal-bg);
 	color: var(--terminal-text);
 	font-family: "SF Mono", "Menlo", "Monaco", "Courier New", monospace;
 }
 
-[data-theme="solarized-light"] h1,
-[data-theme="solarized-light"] h2,
-[data-theme="solarized-light"] h3,
-[data-theme="solarized-light"] h4,
-[data-theme="solarized-light"] h5,
-[data-theme="solarized-light"] h6 {
+html[data-theme="solarized-light"] h1,
+html[data-theme="solarized-light"] h2,
+html[data-theme="solarized-light"] h3,
+html[data-theme="solarized-light"] h4,
+html[data-theme="solarized-light"] h5,
+html[data-theme="solarized-light"] h6 {
 	color: var(--terminal-text);
 }
 
-[data-theme="solarized-light"] a {
+html[data-theme="solarized-light"] a {
 	color: var(--terminal-accent);
 }
 
-[data-theme="solarized-light"] a:hover {
+html[data-theme="solarized-light"] a:hover {
 	color: var(--terminal-cyan);
 }
 
-[data-theme="solarized-light"] code {
+html[data-theme="solarized-light"] code {
 	background-color: var(--terminal-bg-secondary);
 	color: var(--terminal-cyan);
 	border-radius: 4px;
 	padding: 2px 6px;
 }
 
-[data-theme="solarized-light"] pre {
+html[data-theme="solarized-light"] pre {
 	background-color: var(--terminal-bg-secondary);
 	border-radius: 6px;
 }
 
-[data-theme="solarized-light"] blockquote {
+html[data-theme="solarized-light"] blockquote {
 	border-left-color: var(--terminal-accent);
 	color: var(--terminal-text-muted);
 }
 
-[data-theme="solarized-light"] .terminal-prompt {
+html[data-theme="solarized-light"] .terminal-prompt {
 	color: var(--terminal-success);
 }
 
-[data-theme="solarized-light"] .terminal-prompt::before {
+html[data-theme="solarized-light"] .terminal-prompt::before {
 	content: "➜ ";
 	color: var(--terminal-accent);
 }
 
-[data-theme="solarized-light"] .terminal-user {
+html[data-theme="solarized-light"] .terminal-user {
 	color: var(--terminal-magenta);
 }
 
-[data-theme="solarized-light"] .terminal-host {
+html[data-theme="solarized-light"] .terminal-host {
 	color: var(--terminal-cyan);
 }
 
-[data-theme="solarized-light"] .terminal-path {
+html[data-theme="solarized-light"] .terminal-path {
 	color: var(--terminal-warning);
 }
