@@ -1,0 +1,97 @@
+/* Retro Theme - Amber Vintage Terminal */
+[data-theme="retro"] {
+	/* Terminal Colors */
+	--terminal-bg: #1a1814;
+	--terminal-bg-secondary: #2a2620;
+	--terminal-text: #ffb000;
+	--terminal-text-muted: #cc8800;
+	--terminal-accent: #ff9500;
+	--terminal-accent-secondary: #ff6b35;
+	--terminal-success: #ffb000;
+	--terminal-warning: #ff9f0a;
+	--terminal-error: #ff453a;
+	--terminal-cyan: #ffcc00;
+	--terminal-magenta: #ff6600;
+	
+	/* Traffic Lights */
+	--traffic-close: #ff5f56;
+	--traffic-minimize: #ffbd2e;
+	--traffic-maximize: #27c93f;
+	
+	/* Shadows */
+	--terminal-shadow: 0 20px 60px rgba(255, 176, 0, 0.15);
+	--terminal-shadow-inset: inset 0 1px 0 rgba(255, 176, 0, 0.1);
+	
+	/* Blog Specific Overrides */
+	--accent: var(--terminal-accent);
+	--accent-dark: #cc7700;
+	--black: 26, 24, 20;
+	--gray: 204, 136, 0;
+	--gray-light: 42, 38, 32;
+	--gray-dark: 255, 176, 0;
+}
+
+[data-theme="retro"] body {
+	background: var(--terminal-bg);
+	color: var(--terminal-text);
+	font-family: "SF Mono", "Menlo", "Monaco", "Courier New", monospace;
+	text-shadow: 0 0 5px rgba(255, 176, 0, 0.3);
+}
+
+[data-theme="retro"] h1,
+[data-theme="retro"] h2,
+[data-theme="retro"] h3,
+[data-theme="retro"] h4,
+[data-theme="retro"] h5,
+[data-theme="retro"] h6 {
+	color: var(--terminal-text);
+}
+
+[data-theme="retro"] a {
+	color: var(--terminal-accent);
+}
+
+[data-theme="retro"] a:hover {
+	color: var(--terminal-accent-secondary);
+	text-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+}
+
+[data-theme="retro"] code {
+	background-color: var(--terminal-bg-secondary);
+	color: var(--terminal-accent);
+	border-radius: 4px;
+	padding: 2px 6px;
+	border: 1px solid rgba(255, 176, 0, 0.2);
+}
+
+[data-theme="retro"] pre {
+	background-color: var(--terminal-bg-secondary);
+	border-radius: 6px;
+	border: 1px solid rgba(255, 176, 0, 0.2);
+}
+
+[data-theme="retro"] blockquote {
+	border-left-color: var(--terminal-accent);
+	color: var(--terminal-text-muted);
+}
+
+[data-theme="retro"] .terminal-prompt {
+	color: var(--terminal-success);
+}
+
+[data-theme="retro"] .terminal-prompt::before {
+	content: "➜ ";
+	color: var(--terminal-accent);
+}
+
+[data-theme="retro"] .terminal-user {
+	color: var(--terminal-magenta);
+}
+
+[data-theme="retro"] .terminal-host {
+	color: var(--terminal-accent);
+}
+
+[data-theme="retro"] .terminal-path {
+	color: var(--terminal-cyan);
+}

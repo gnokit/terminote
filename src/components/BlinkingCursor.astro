@@ -1,0 +1,38 @@
+---
+// Blinking Cursor Component - Animated Terminal Cursor
+interface Props {
+	class?: string;
+}
+
+const { class: className = "" } = Astro.props;
+---
+
+<span class={`blinking-cursor ${className}`} aria-hidden="true"></span>
+
+<style>
+	.blinking-cursor {
+		display: inline-block;
+		width: 8px;
+		height: 1.2em;
+		background-color: currentColor;
+		margin-left: 2px;
+		animation: blink 1s step-end infinite;
+		vertical-align: text-bottom;
+	}
+
+	@keyframes blink {
+		0%, 50% {
+			opacity: 1;
+		}
+		51%, 100% {
+			opacity: 0;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.blinking-cursor {
+			animation: none;
+			opacity: 1;
+		}
+	}
+</style>

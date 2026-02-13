@@ -1,0 +1,164 @@
+---
+// Theme Toggle Component - macOS Terminal Style Theme Switcher
+---
+
+<div class="theme-toggle">
+	<button 
+		class="theme-button active" 
+		data-theme="pro"
+		aria-label="Switch to Pro theme"
+		title="Pro (Default)"
+	>
+		<span class="theme-indicator pro"></span>
+		<span class="theme-label">Pro</span>
+	</button>
+	<button 
+		class="theme-button" 
+		data-theme="homebrew"
+		aria-label="Switch to Homebrew theme"
+		title="Homebrew (Green)"
+	>
+		<span class="theme-indicator homebrew"></span>
+		<span class="theme-label">Homebrew</span>
+	</button>
+	<button 
+		class="theme-button" 
+		data-theme="nocturnal"
+		aria-label="Switch to Nocturnal theme"
+		title="Nocturnal (Purple)"
+	>
+		<span class="theme-indicator nocturnal"></span>
+		<span class="theme-label">Nocturnal</span>
+	</button>
+	<button 
+		class="theme-button" 
+		data-theme="retro"
+		aria-label="Switch to Retro theme"
+		title="Retro (Amber)"
+	>
+		<span class="theme-indicator retro"></span>
+		<span class="theme-label">Retro</span>
+	</button>
+</div>
+
+<style>
+	.theme-toggle {
+		display: flex;
+		gap: 4px;
+		padding: 4px;
+		background: var(--terminal-bg-secondary);
+		border-radius: 8px;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	.theme-button {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		padding: 6px 10px;
+		background: transparent;
+		border: none;
+		border-radius: 6px;
+		color: var(--terminal-text-muted);
+		font-family: "SF Mono", "Menlo", "Monaco", "Courier New", monospace;
+		font-size: 12px;
+		cursor: pointer;
+		transition: all 0.2s ease;
+	}
+
+	.theme-button:hover {
+		background: rgba(255, 255, 255, 0.05);
+		color: var(--terminal-text);
+	}
+
+	.theme-button.active {
+		background: var(--terminal-bg);
+		color: var(--terminal-text);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	}
+
+	.theme-indicator {
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		flex-shrink: 0;
+	}
+
+	.theme-indicator.pro {
+		background: #0a84ff;
+	}
+
+	.theme-indicator.homebrew {
+		background: #00ff41;
+	}
+
+	.theme-indicator.nocturnal {
+		background: #bf5af2;
+	}
+
+	.theme-indicator.retro {
+		background: #ffb000;
+	}
+
+	.theme-label {
+		display: none;
+	}
+
+	@media (min-width: 640px) {
+		.theme-label {
+			display: inline;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.theme-toggle {
+			gap: 2px;
+			padding: 2px;
+		}
+
+		.theme-button {
+			padding: 4px 6px;
+		}
+
+		.theme-indicator {
+			width: 8px;
+			height: 8px;
+		}
+	}
+</style>
+
+<script>
+	// Theme switching logic
+	const themeButtons = document.querySelectorAll('.theme-button');
+	const html = document.documentElement;
+
+	// Get saved theme or default to 'pro'
+	const savedTheme = localStorage.getItem('theme') || 'pro';
+	html.setAttribute('data-theme', savedTheme);
+
+	// Update active button
+	themeButtons.forEach((btn: Element) => {
+		const button = btn as HTMLElement;
+		if (button.dataset.theme === savedTheme) {
+			button.classList.add('active');
+		} else {
+			button.classList.remove('active');
+		}
+	});
+
+	// Add click handlers
+	themeButtons.forEach((btn: Element) => {
+		const button = btn as HTMLElement;
+		button.addEventListener('click', () => {
+			const theme = button.dataset.theme;
+			
+			// Update theme
+			html.setAttribute('data-theme', theme);
+			localStorage.setItem('theme', theme);
+			
+			// Update active button
+			themeButtons.forEach((b: Element) => (b as HTMLElement).classList.remove('active'));
+			button.classList.add('active');
+		});
+	});
+</script>

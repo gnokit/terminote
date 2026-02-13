@@ -1,54 +1,100 @@
 /*
-  The CSS in this style tag is based off of Bear Blog's default CSS.
-  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
-  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
- */
+  Terminal-themed Astro Blog Styles
+  Based on macOS Terminal aesthetics with multiple color schemes
+*/
 
+/* Import Terminal Themes */
+@import './themes/pro.css';
+@import './themes/homebrew.css';
+@import './themes/nocturnal.css';
+@import './themes/retro.css';
+
+/* Import Terminal Base Styles & Animations */
+@import './terminal.css';
+@import './animations.css';
+
+/* Default Theme Variables (Pro - macOS Terminal Dark) */
 :root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
-	--black: 15, 18, 25;
-	--gray: 96, 115, 159;
-	--gray-light: 229, 233, 240;
-	--gray-dark: 34, 41, 57;
-	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
-	--box-shadow:
-		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px
-		rgba(var(--gray), 33%);
+	--accent: #0a84ff;
+	--accent-dark: #0051d5;
+	--black: 30, 30, 30;
+	--gray: 108, 108, 108;
+	--gray-light: 45, 45, 45;
+	--gray-dark: 240, 240, 240;
+	
+	/* Terminal Colors - Default */
+	--terminal-bg: #1e1e1e;
+	--terminal-bg-secondary: #2d2d2d;
+	--terminal-text: #f0f0f0;
+	--terminal-text-muted: #6c6c6c;
+	--terminal-accent: #0a84ff;
+	--terminal-accent-secondary: #5e5ce6;
+	--terminal-success: #32d74b;
+	--terminal-warning: #ff9f0a;
+	--terminal-error: #ff453a;
+	--terminal-cyan: #64d2ff;
+	--terminal-magenta: #ff375f;
+	
+	/* Traffic Lights */
+	--traffic-close: #ff5f56;
+	--traffic-minimize: #ffbd2e;
+	--traffic-maximize: #27c93f;
+	
+	/* Shadows */
+	--terminal-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+	--terminal-shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+	
+	/* Legacy */
+	--gray-gradient: rgba(var(--gray-light), 50%), var(--terminal-bg);
+	--box-shadow: var(--terminal-shadow);
 }
+
+/* Smooth theme transitions */
+* {
+	transition: background-color 0.3s ease, 
+				color 0.3s ease, 
+				border-color 0.3s ease;
+}
+
+/* Font Faces - SF Mono is the macOS Terminal font */
 @font-face {
-	font-family: "Atkinson";
-	src: url("/fonts/atkinson-regular.woff") format("woff");
+	font-family: "SF Mono";
+	src: local("SF Mono"), local("SFMono-Regular");
 	font-weight: 400;
 	font-style: normal;
-	font-display: swap;
 }
+
 @font-face {
-	font-family: "Atkinson";
-	src: url("/fonts/atkinson-bold.woff") format("woff");
+	font-family: "SF Mono";
+	src: local("SF Mono Bold"), local("SFMono-Bold");
 	font-weight: 700;
 	font-style: normal;
-	font-display: swap;
 }
+
+/* Base Styles */
 body {
-	font-family: "Atkinson", sans-serif;
+	font-family: "SF Mono", "Menlo", "Monaco", "Courier New", monospace;
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
+	background: var(--terminal-bg);
 	background-size: 100% 600px;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
-	font-size: 20px;
-	line-height: 1.7;
+	color: var(--terminal-text);
+	font-size: 16px;
+	line-height: 1.6;
+	min-height: 100vh;
 }
+
 main {
-	width: 720px;
+	width: 900px;
 	max-width: calc(100% - 2em);
 	margin: auto;
-	padding: 3em 1em;
+	padding: 2em 1em;
 }
+
+/* Typography */
 h1,
 h2,
 h3,
@@ -56,86 +102,202 @@ h4,
 h5,
 h6 {
 	margin: 0 0 0.5rem 0;
-	color: rgb(var(--black));
-	line-height: 1.2;
+	color: var(--terminal-text);
+	line-height: 1.3;
+	font-weight: 600;
 }
+
 h1 {
-	font-size: 3.052em;
+	font-size: 2em;
 }
+
 h2 {
-	font-size: 2.441em;
+	font-size: 1.5em;
 }
+
 h3 {
-	font-size: 1.953em;
-}
-h4 {
-	font-size: 1.563em;
-}
-h5 {
 	font-size: 1.25em;
 }
+
+h4 {
+	font-size: 1.125em;
+}
+
+h5 {
+	font-size: 1em;
+}
+
 strong,
 b {
 	font-weight: 700;
+	color: var(--terminal-text);
 }
+
 a {
-	color: var(--accent);
+	color: var(--terminal-accent);
+	text-decoration: none;
+	border-bottom: 1px solid transparent;
+	transition: border-color 0.2s ease;
 }
+
 a:hover {
-	color: var(--accent);
+	border-bottom-color: var(--terminal-accent);
 }
+
 p {
 	margin-bottom: 1em;
 }
-.prose p {
-	margin-bottom: 2em;
+
+/* Form Elements */
+textarea,
+input {
+	font-family: inherit;
+	font-size: 14px;
+	background: var(--terminal-bg-secondary);
+	color: var(--terminal-text);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 6px;
+	padding: 8px 12px;
 }
+
+textarea:focus,
+input:focus {
+	outline: none;
+	border-color: var(--terminal-accent);
+}
+
 textarea {
 	width: 100%;
-	font-size: 16px;
+	resize: vertical;
 }
+
 input {
-	font-size: 16px;
+	width: auto;
 }
+
+/* Tables */
 table {
 	width: 100%;
+	border-collapse: collapse;
+	margin: 1em 0;
 }
+
+th,
+td {
+	padding: 8px 12px;
+	text-align: left;
+	border-bottom: 1px solid var(--terminal-bg-secondary);
+}
+
+th {
+	color: var(--terminal-accent);
+	font-weight: 600;
+}
+
+/* Images */
 img {
 	max-width: 100%;
 	height: auto;
-	border-radius: 8px;
+	border-radius: 6px;
 }
+
+/* Code */
 code {
-	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
-	border-radius: 2px;
+	font-family: inherit;
+	padding: 2px 6px;
+	background-color: var(--terminal-bg-secondary);
+	color: var(--terminal-cyan);
+	border-radius: 4px;
+	font-size: 0.9em;
 }
+
 pre {
-	padding: 1.5em;
-	border-radius: 8px;
+	padding: 1em;
+	background-color: var(--terminal-bg-secondary);
+	border-radius: 6px;
+	overflow-x: auto;
+	border: 1px solid rgba(255, 255, 255, 0.05);
 }
+
 pre > code {
 	all: unset;
+	background: transparent;
+	padding: 0;
 }
+
+/* Blockquotes */
 blockquote {
-	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
-	margin: 0;
-	font-size: 1.333em;
+	border-left: 3px solid var(--terminal-accent);
+	padding: 0 0 0 16px;
+	margin: 1em 0;
+	color: var(--terminal-text-muted);
+	font-style: italic;
 }
+
+/* Horizontal Rule */
 hr {
 	border: none;
-	border-top: 1px solid rgb(var(--gray-light));
+	border-top: 1px solid var(--terminal-bg-secondary);
+	margin: 2em 0;
 }
+
+/* Selection */
+::selection {
+	background: var(--terminal-accent);
+	color: var(--terminal-bg);
+}
+
+/* Scrollbar - macOS Style */
+::-webkit-scrollbar {
+	width: 12px;
+	height: 12px;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgba(128, 128, 128, 0.4);
+	border-radius: 6px;
+	border: 3px solid transparent;
+	background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(128, 128, 128, 0.6);
+}
+
+::-webkit-scrollbar-corner {
+	background: transparent;
+}
+
+/* Responsive */
 @media (max-width: 720px) {
 	body {
-		font-size: 18px;
+		font-size: 14px;
 	}
+	
 	main {
 		padding: 1em;
+		width: 100%;
+		max-width: 100%;
+	}
+	
+	h1 {
+		font-size: 1.75em;
+	}
+	
+	h2 {
+		font-size: 1.375em;
+	}
+	
+	h3 {
+		font-size: 1.125em;
 	}
 }
 
+/* Accessibility */
 .sr-only {
 	border: 0;
 	padding: 0;
@@ -144,12 +306,61 @@ hr {
 	height: 1px;
 	width: 1px;
 	overflow: hidden;
-	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
-	clip: rect(1px 1px 1px 1px);
-	/* maybe deprecated but we need to support legacy browsers */
 	clip: rect(1px, 1px, 1px, 1px);
-	/* modern browsers, clip-path works inwards from each corner */
 	clip-path: inset(50%);
-	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		transition: none !important;
+		animation: none !important;
+	}
+}
+
+/* Terminal Blog Specific Styles */
+.blog-header {
+	margin-bottom: 2rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid var(--terminal-bg-secondary);
+}
+
+.blog-title {
+	font-size: 1.5em;
+	margin-bottom: 0.5rem;
+}
+
+.blog-meta {
+	color: var(--terminal-text-muted);
+	font-size: 0.875em;
+}
+
+.blog-content {
+	margin-top: 2rem;
+}
+
+/* Post List Styles */
+.post-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.post-item {
+	padding: 1rem 0;
+	border-bottom: 1px solid var(--terminal-bg-secondary);
+}
+
+.post-item:last-child {
+	border-bottom: none;
+}
+
+.post-link {
+	font-weight: 600;
+}
+
+.post-date {
+	color: var(--terminal-text-muted);
+	font-size: 0.875em;
 }

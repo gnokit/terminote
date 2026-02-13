@@ -1,0 +1,97 @@
+/* Nocturnal Theme - Purple/Blue Cyberpunk */
+[data-theme="nocturnal"] {
+	/* Terminal Colors */
+	--terminal-bg: #0a0a0f;
+	--terminal-bg-secondary: #141419;
+	--terminal-text: #00f0ff;
+	--terminal-text-muted: #5e5ce6;
+	--terminal-accent: #bf5af2;
+	--terminal-accent-secondary: #5e5ce6;
+	--terminal-success: #32d74b;
+	--terminal-warning: #ff9f0a;
+	--terminal-error: #ff453a;
+	--terminal-cyan: #00f0ff;
+	--terminal-magenta: #bf5af2;
+	
+	/* Traffic Lights */
+	--traffic-close: #ff5f56;
+	--traffic-minimize: #ffbd2e;
+	--traffic-maximize: #27c93f;
+	
+	/* Shadows */
+	--terminal-shadow: 0 20px 60px rgba(191, 90, 242, 0.2);
+	--terminal-shadow-inset: inset 0 1px 0 rgba(191, 90, 242, 0.1);
+	
+	/* Blog Specific Overrides */
+	--accent: var(--terminal-accent);
+	--accent-dark: #8e4bc7;
+	--black: 10, 10, 15;
+	--gray: 94, 92, 230;
+	--gray-light: 20, 20, 25;
+	--gray-dark: 0, 240, 255;
+}
+
+[data-theme="nocturnal"] body {
+	background: var(--terminal-bg);
+	color: var(--terminal-text);
+	font-family: "SF Mono", "Menlo", "Monaco", "Courier New", monospace;
+	text-shadow: 0 0 5px rgba(0, 240, 255, 0.2);
+}
+
+[data-theme="nocturnal"] h1,
+[data-theme="nocturnal"] h2,
+[data-theme="nocturnal"] h3,
+[data-theme="nocturnal"] h4,
+[data-theme="nocturnal"] h5,
+[data-theme="nocturnal"] h6 {
+	color: var(--terminal-text);
+}
+
+[data-theme="nocturnal"] a {
+	color: var(--terminal-accent);
+}
+
+[data-theme="nocturnal"] a:hover {
+	color: var(--terminal-magenta);
+	text-shadow: 0 0 10px rgba(191, 90, 242, 0.5);
+}
+
+[data-theme="nocturnal"] code {
+	background-color: var(--terminal-bg-secondary);
+	color: var(--terminal-magenta);
+	border-radius: 4px;
+	padding: 2px 6px;
+	border: 1px solid rgba(191, 90, 242, 0.3);
+}
+
+[data-theme="nocturnal"] pre {
+	background-color: var(--terminal-bg-secondary);
+	border-radius: 6px;
+	border: 1px solid rgba(191, 90, 242, 0.3);
+}
+
+[data-theme="nocturnal"] blockquote {
+	border-left-color: var(--terminal-accent);
+	color: var(--terminal-text-muted);
+}
+
+[data-theme="nocturnal"] .terminal-prompt {
+	color: var(--terminal-magenta);
+}
+
+[data-theme="nocturnal"] .terminal-prompt::before {
+	content: "➜ ";
+	color: var(--terminal-cyan);
+}
+
+[data-theme="nocturnal"] .terminal-user {
+	color: var(--terminal-magenta);
+}
+
+[data-theme="nocturnal"] .terminal-host {
+	color: var(--terminal-accent-secondary);
+}
+
+[data-theme="nocturnal"] .terminal-path {
+	color: var(--terminal-cyan);
+}
